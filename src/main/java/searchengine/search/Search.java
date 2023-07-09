@@ -200,8 +200,8 @@ public class Search {
             builder1.append("<b>")
                     .append(string, from, to + offset)
                     .append("</b>");
-            if (!((string.length() - to) < 30)) {
-                builder1.append(string, to + offset, string.indexOf(" ", to + offset + 30))
+            if (!((string.length() - to) < 80)) {
+                builder1.append(string, to + offset, string.indexOf(" ", to + offset + 80))
                         .append("... ");
             }
         }

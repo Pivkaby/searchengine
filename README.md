@@ -16,14 +16,14 @@ Spring Framework, JPA, JSOUP, SQL, Morphology Library Lucene
 Страница содержит три вкладки.
 
 ### Вкладка DASHBOARD
-![image](https://github.com/Pivkaby/se/blob/master/src/main/resources/png/dashboard.png)
+![image](https://github.com/Pivkaby/searchengine/blob/master/src/main/resources/dashboard.png)
 Эта вкладка открывается по умолчанию. На ней
 отображается общая статистика по всем проиндексированным сайтам, а также
 детальная статистика и статус по каждому из сайтов (статистика,
 получаемая по запросу <i>/statistics</i>).
 
 ### Вкладка MANAGEMENT
-![image](https://github.com/Pivkaby/se/blob/master/src/main/resources/png/management.png)
+![image](https://github.com/Pivkaby/searchengine/blob/master/src/main/resources/management.png)
 На этой вкладке находятся инструменты управления 
 поисковым движком — запуск (запрос <i>/startIndexing</i>) 
 и остановка (запрос <i>/stopIndexing</i>) полной индексации
@@ -31,7 +31,7 @@ Spring Framework, JPA, JSOUP, SQL, Morphology Library Lucene
 отдельную страницу по ссылке (запрос <i>/indexPage/{pagePath}</i>).
 
 ### Вкладка SEARCH
-![image](https://github.com/Pivkaby/se/blob/master/src/main/resources/png/search.png)<p>
+![image](https://github.com/Pivkaby/searchengine/blob/master/src/main/resources/search.png)<p>
 Эта вкладка предназначена для тестирования поискового
 движка. На ней находится поле поиска и выпадающий список с
 выбором сайта, по которому искать, а при нажатии на кнопку

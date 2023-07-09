@@ -3,7 +3,7 @@ package searchengine.services.implementation;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Service;
-import searchengine.Search;
+import searchengine.search.Search;
 import searchengine.model.Request;
 import searchengine.services.SearchService;
 import searchengine.services.responses.FalseResponseService;

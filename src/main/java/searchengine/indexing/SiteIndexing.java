@@ -1,9 +1,10 @@
-package searchengine;
+package searchengine.indexing;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import searchengine.model.*;
 import searchengine.morphology.MorphologyAnalyzer;
+import searchengine.search.SearchSettings;
 import searchengine.services.*;
 import searchengine.sitemap.SiteMapBuilder;
 import org.jsoup.Jsoup;

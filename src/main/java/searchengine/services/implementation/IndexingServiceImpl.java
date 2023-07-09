@@ -4,7 +4,7 @@ import searchengine.services.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
-import searchengine.IndexBuilding;
+import searchengine.indexing.IndexBuilding;
 import searchengine.services.responses.FalseResponseService;
 import searchengine.services.responses.ResponseService;
 import searchengine.services.responses.TrueResponseService;

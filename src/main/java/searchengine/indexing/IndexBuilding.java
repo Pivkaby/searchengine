@@ -1,8 +1,9 @@
-package searchengine;
+package searchengine.indexing;
 
 import org.springframework.stereotype.Component;
 import searchengine.model.Site;
 import searchengine.model.Status;
+import searchengine.search.SearchSettings;
 import searchengine.services.*;
 
 import java.util.*;

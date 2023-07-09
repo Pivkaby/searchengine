@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="29bbb73c-82d2-4431-83db-568b1d19d624" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/dictionary-reader-1.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/english-1.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/morph-1.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/morphology-1.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/russian-1.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/IndexBuilding.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/SearchSettings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/config/Site.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/config/SitesList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/controllers/DefaultController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/controllers/IndexingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/controllers/SearchController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/controllers/StatisticController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/dto/statistics/DetailedStatisticsItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/dto/statistics/StatisticsData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/dto/statistics/StatisticsResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/dto/statistics/TotalStatistics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/model/Lemma.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/model/LemmaAll.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/model/Page.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/model/Request.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/model/SearchData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/model/Site.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/model/Status.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/morphology/MorphologyAnalyzer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/repo/IndexRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/repo/LemmaAllRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/repo/LemmaRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/repo/PageRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/repo/SiteRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/services/IndexRepositoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/services/IndexingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/services/LemmaAllRepositoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/services/LemmaRepositoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/services/PageRepositoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/services/SearchService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/services/SiteRepositoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/services/StatisticsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/services/implementation/IndexRepoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/services/implementation/IndexingServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/services/implementation/LemmaAllRepoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/services/implementation/LemmaRepoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/services/implementation/PageRepoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/services/implementation/SearchServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/services/implementation/SiteRepoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/services/implementation/StatisticsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/services/indexresponseentity/Detailed.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/services/indexresponseentity/Total.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/services/responses/FalseResponseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/services/responses/ResponseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/services/responses/SearchResponseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/services/responses/StatisticResponseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/services/responses/TrueResponseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/sitemap/ParseUrl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/searchengine/sitemap/SiteMapBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/css/basic.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/css/extra.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/css/fonts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Black.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Black.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Black.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Black.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Bold.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Bold.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Bold.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Bold.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Bold.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-ExtraBold.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-ExtraBold.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-ExtraBold.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-ExtraBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-ExtraBold.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-ExtraBold.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-ExtraLight.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-ExtraLight.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-ExtraLight.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-ExtraLight.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-ExtraLight.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-ExtraLight.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Light.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Light.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Light.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Light.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Light.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Medium.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Medium.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Medium.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Medium.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Medium.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Medium.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-SemiBold.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-SemiBold.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-SemiBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-SemiBold.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-SemiBold.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Thin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Thin.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Thin.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/fonts/Montserrat/Montserrat-Thin.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/icons/arrow_hide.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/icons/cancel.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/icons/checked.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/icons/dashboard.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/icons/management.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/icons/pause.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/icons/search.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/scripts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plg/form/jquery.form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plg/form/jquery.maskedinput.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plg/jQuery/jquery-3.5.0.slim.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/plg/jQuery/jquery-3.5.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2SJJ0a0hgC7Wdx43V0XR4G6hnsS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/leca4/IdeaProjects/searchengine/lib/russian-1.5.jar",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.56666666"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="29bbb73c-82d2-4431-83db-568b1d19d624" name="Changes" comment="" />
+      <created>1688858534866</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1688858534866</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

@@ -6,10 +6,8 @@ import org.jsoup.select.Elements;
 import org.springframework.stereotype.Service;
 import searchengine.model.*;
 import searchengine.morphology.MorphologyAnalyzer;
-import searchengine.services.IndexRepositoryService;
-import searchengine.services.LemmaRepositoryService;
-import searchengine.services.PageRepositoryService;
-import searchengine.services.SiteRepositoryService;
+import searchengine.services.IndexingService;
+import searchengine.services.SearchService;
 import searchengine.services.responses.SearchResponseService;
 
 import java.util.*;
@@ -20,17 +18,17 @@ import java.util.stream.Stream;
 @Service
 public class Search {
 
-    private final SiteRepositoryService siteRepositoryService;
-    private final IndexRepositoryService indexRepositoryService;
-    private final PageRepositoryService pageRepositoryService;
-    private final LemmaRepositoryService lemmaRepositoryService;
+    private final SearchService siteRepositoryService;
+    private final IndexingService indexingService;
+    private final SearchService pageRepositoryService;
+    private final IndexingService lemmaRepositoryService;
 
-    public Search(SiteRepositoryService siteRepositoryService,
-                  IndexRepositoryService indexRepositoryService,
-                  PageRepositoryService pageRepositoryService,
-                  LemmaRepositoryService lemmaRepositoryService) {
+    public Search(SearchService siteRepositoryService,
+                  IndexingService indexingService,
+                  SearchService pageRepositoryService,
+                  IndexingService lemmaRepositoryService) {
         this.siteRepositoryService = siteRepositoryService;
-        this.indexRepositoryService = indexRepositoryService;
+        this.indexingService = indexingService;
         this.pageRepositoryService = pageRepositoryService;
         this.lemmaRepositoryService = lemmaRepositoryService;
     }
@@ -72,11 +70,11 @@ public class Search {
         List<Lemma> reqLemmas = sortedReqLemmas(request, siteId);
         List<Integer> pageIndexes = new ArrayList<>();
         if (!reqLemmas.isEmpty()) {
-            List<Index> indexingList = indexRepositoryService.getAllIndexingByLemma(reqLemmas.get(0));
+            List<Index> indexingList = indexingService.getAllIndexingByLemma(reqLemmas.get(0));
             indexingList.forEach(indexing -> pageIndexes.add(indexing.getPageId()));
             for (Lemma lemma : reqLemmas) {
                 if (!pageIndexes.isEmpty() && lemma.getId() != reqLemmas.get(0).getId()) {
-                    List<Index> indexingList2 = indexRepositoryService.getAllIndexingByLemma(lemma);
+                    List<Index> indexingList2 = indexingService.getAllIndexingByLemma(lemma);
                     List<Integer> tempList = new ArrayList<>();
                     indexingList2.forEach(indexing -> tempList.add(indexing.getPageId()));
                     pageIndexes.retainAll(tempList);
@@ -133,8 +131,10 @@ public class Search {
     private double getAbsRelevance(Page page, List<Lemma> lemmas) {
         double r = 0.0;
         for (Lemma lemma : lemmas) {
-            Index indexing = indexRepositoryService.getIndexing(lemma, page);
-            r = r + indexing.getRank();
+            Index indexing = indexingService.getIndexing(lemma, page);
+            if (indexing != null) {
+                r = r + indexing.getRank();
+            }
         }
         return r;
     }
@@ -200,11 +200,13 @@ public class Search {
             builder1.append("<b>")
                     .append(string, from, to + offset)
                     .append("</b>");
-            if (!((string.length() - to) < 80)) {
-                builder1.append(string, to + offset, string.indexOf(" ", to + offset + 80))
+
+            if (!((string.length() - to) < 90)) {
+                builder1.append(string, to + offset, string.indexOf(" ", to + offset + 90))
                         .append("... ");
             }
         }
+
         return builder1.toString();
     }
 

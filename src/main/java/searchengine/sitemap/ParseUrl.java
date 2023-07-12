@@ -8,7 +8,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import searchengine.model.Page;
 import searchengine.model.Site;
-import searchengine.services.PageRepositoryService;
+import searchengine.services.SearchService;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,13 +19,13 @@ import java.util.concurrent.RecursiveTask;
 public class ParseUrl extends RecursiveTask<String> {
     public final static List<String> urlList = new Vector<>();
     private static final Logger log = LogManager.getLogger();
-    private final PageRepositoryService pageRepositoryService;
+    private final SearchService pageRepositoryService;
     private final String url;
     private final Boolean isInterrupted;
     private final String baseUrl;
     private final Site site;
 
-    public ParseUrl(String url, boolean isInterrupted, PageRepositoryService pageRepositoryService, String baseUrl, Site site) {
+    public ParseUrl(String url, boolean isInterrupted, SearchService pageRepositoryService, String baseUrl, Site site) {
         this.url = url;
         this.isInterrupted = isInterrupted;
         this.pageRepositoryService = pageRepositoryService;

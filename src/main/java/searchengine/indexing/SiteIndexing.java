@@ -16,11 +16,11 @@ import java.util.*;
 public class SiteIndexing extends Thread {
     private static final Logger log = LogManager.getLogger();
     private final Site site;
-    private final SiteRepositoryService siteRepositoryService;
-    private final IndexRepositoryService indexRepositoryService;
-    private final PageRepositoryService pageRepositoryService;
-    private final LemmaRepositoryService lemmaRepositoryService;
-    private final LemmaAllRepositoryService lemmaAllRepositoryService;
+    private final SearchService siteRepositoryService;
+    private final IndexingService indexingService;
+    private final SearchService pageRepositoryService;
+    private final IndexingService lemmaRepositoryService;
+    private final IndexingService lemmaAllRepositoryService;
     private final boolean allSite;
     private Boolean isStoppingByHuman = false;
     SiteMapBuilder builder;
@@ -28,16 +28,16 @@ public class SiteIndexing extends Thread {
 
     public SiteIndexing(Site site,
                         SearchSettings searchSettings,
-                        SiteRepositoryService siteRepositoryService,
-                        IndexRepositoryService indexRepositoryService,
-                        PageRepositoryService pageRepositoryService,
-                        LemmaRepositoryService lemmaRepositoryService,
-                        LemmaAllRepositoryService lemmaAllRepositoryService,
+                        SearchService siteRepositoryService,
+                        IndexingService indexingService,
+                        SearchService pageRepositoryService,
+                        IndexingService lemmaRepositoryService,
+                        IndexingService lemmaAllRepositoryService,
                         boolean allSite,
                         String url) {
         this.site = site;
         this.siteRepositoryService = siteRepositoryService;
-        this.indexRepositoryService = indexRepositoryService;
+        this.indexingService = indexingService;
         this.pageRepositoryService = pageRepositoryService;
         this.lemmaRepositoryService = lemmaRepositoryService;
         this.lemmaAllRepositoryService = lemmaAllRepositoryService;
@@ -159,7 +159,7 @@ public class SiteIndexing extends Thread {
     }
 
     private void prepareDbToIndexing(Page page) {
-        List<Index> indexingList = indexRepositoryService.getAllIndexingByPage(page);
+        List<Index> indexingList = indexingService.getAllIndexingByPage(page);
         List<Lemma> allLemmasIdByIndexing = lemmaRepositoryService.findLemmasByIndexing(indexingList);
         lemmaRepositoryService.deleteAllLemmas(allLemmasIdByIndexing);
     }

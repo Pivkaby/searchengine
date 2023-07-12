@@ -1,5 +1,12 @@
 package searchengine.services.implementation;
 
+import searchengine.model.Index;
+import searchengine.model.Lemma;
+import searchengine.model.LemmaAll;
+import searchengine.model.Page;
+import searchengine.repo.IndexRepository;
+import searchengine.repo.LemmaAllRepository;
+import searchengine.repo.LemmaRepository;
 import searchengine.services.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -9,15 +16,21 @@ import searchengine.services.responses.FalseResponseService;
 import searchengine.services.responses.ResponseService;
 import searchengine.services.responses.TrueResponseService;
 
+import java.util.List;
+
 @Service
 public class IndexingServiceImpl implements IndexingService {
 
     private final IndexBuilding indexBuilding;
-
+    private final IndexRepository indexRepository;
+    private final LemmaAllRepository lemmaAllRepository;
+    private final LemmaRepository lemmaRepository;
     private static final Logger log = LogManager.getLogger();
-
-    public IndexingServiceImpl(IndexBuilding indexBuilding) {
+    public IndexingServiceImpl(IndexBuilding indexBuilding, IndexRepository indexRepository, LemmaAllRepository lemmaAllRepository, LemmaRepository lemmaRepository) {
         this.indexBuilding = indexBuilding;
+        this.indexRepository = indexRepository;
+        this.lemmaAllRepository = lemmaAllRepository;
+        this.lemmaRepository = lemmaRepository;
     }
 
     @Override
@@ -77,5 +90,105 @@ public class IndexingServiceImpl implements IndexingService {
             resp = new TrueResponseService();
         }
         return resp;
+    }
+
+    @Override
+    public List<Index> getAllIndexingByLemma(Lemma lemma) {
+        return indexRepository.findByLemma(lemma);
+    }
+
+    @Override
+    public List<Index> getAllIndexingByPage(Page page) {
+        return indexRepository.findByPage(page);
+    }
+
+    @Override
+    public Index getIndexing(Lemma lemma, Page page) {
+        Index indexing = null;
+        try{
+            indexing = indexRepository.findByLemmaAndPage(lemma, page);
+        } catch (Exception e) {
+            log.info("lemmaId: " + lemma.getId() + " + pageId: " + page.getId() + " not unique");
+            e.printStackTrace();
+        }
+        return indexing;
+    }
+
+    @Override
+    public synchronized void save(Index index) {
+        indexRepository.save(index);
+    }
+
+    @Override
+    public synchronized void saveAll(Iterable<LemmaAll> entities) {
+        lemmaAllRepository.saveAll(entities);
+    }
+
+    @Override
+    public void saveLemma() {
+        lemmaAllRepository.saveLemma();
+    }
+    @Override
+    public void saveIndex() {
+        lemmaAllRepository.saveIndex();
+    }
+    @Override
+    public void deleteLemmaAll() {
+        lemmaAllRepository.deleteAll();
+    }
+
+    @Override
+    public List<Lemma> getLemma(String lemmaName) {
+        List<Lemma> lemmas = null;
+        try {
+            lemmas = lemmaRepository.findByLemma(lemmaName);
+        } catch (Exception e) {
+            log.info(lemmaName);
+            e.printStackTrace();
+        }
+        return lemmas;
+    }
+
+    @Override
+    public synchronized void save(Lemma lemma) {
+        lemmaRepository.save(lemma);
+    }
+
+    @Override
+    public long lemmaCount() {
+        return lemmaRepository.count();
+    }
+
+    @Override
+    public long lemmaCount(long siteId) {
+        return lemmaRepository.count(siteId);
+    }
+
+    @Override
+    public synchronized void deleteAllLemmas(List<Lemma> lemmaList) {
+        if (lemmaList.size() > 0) {
+            lemmaRepository.deleteAll(lemmaList);
+        } else {
+            lemmaRepository.deleteAll();
+        }
+    }
+
+    @Override
+    public List<Lemma> findLemmasByIndexing(List<Index> indexingList) {
+        int[] lemmaIdList = new int[indexingList.size()];
+        for (int i = 0; i < indexingList.size(); i++) {
+            lemmaIdList[i] = indexingList.get(i).getLemmaId();
+        }
+        return lemmaRepository.findByIds(lemmaIdList);
+    }
+
+    @Override
+    public void saveLemma(String lemma, int frequency, int siteId) {
+        lemmaRepository.saveLemma(lemma, frequency, siteId);
+    }
+
+    @Override
+    public int findLemmaIdByNameAndSiteId(String lemma, int siteId) {
+        return lemmaRepository.findLemmaIdByNameAndSiteId(lemma, siteId);
     }
 }

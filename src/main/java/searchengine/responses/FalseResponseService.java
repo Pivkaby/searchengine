@@ -1,4 +1,4 @@
-package searchengine.services.responses;
+package searchengine.responses;
 
 public class FalseResponseService implements ResponseService {
     private final String error;

@@ -1,6 +1,6 @@
 package searchengine.services;
 
-import searchengine.services.responses.StatisticResponseService;
+import searchengine.responses.StatisticResponseService;
 
 public interface StatisticsService {
     StatisticResponseService getStatistics();

@@ -2,15 +2,14 @@ package searchengine.services.implementation;
 
 import searchengine.model.*;
 import searchengine.repo.*;
-import searchengine.search.Search;
 import searchengine.services.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
 import searchengine.indexing.IndexBuilding;
-import searchengine.services.responses.FalseResponseService;
-import searchengine.services.responses.ResponseService;
-import searchengine.services.responses.TrueResponseService;
+import searchengine.responses.FalseResponseService;
+import searchengine.responses.ResponseService;
+import searchengine.responses.TrueResponseService;
 
 import java.util.ArrayList;
 import java.util.List;

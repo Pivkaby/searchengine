@@ -1,7 +1,7 @@
 package searchengine.controllers;
 
 import searchengine.services.IndexingService;
-import searchengine.services.responses.ResponseService;
+import searchengine.responses.ResponseService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

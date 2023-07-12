@@ -4,7 +4,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import searchengine.services.StatisticsService;
-import searchengine.services.responses.StatisticResponseService;
+import searchengine.responses.StatisticResponseService;
 
 @Controller
 public class StatisticController {

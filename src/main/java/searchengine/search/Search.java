@@ -7,8 +7,7 @@ import org.springframework.stereotype.Service;
 import searchengine.model.*;
 import searchengine.morphology.MorphologyAnalyzer;
 import searchengine.services.IndexingService;
-import searchengine.services.SearchService;
-import searchengine.services.responses.SearchResponseService;
+import searchengine.responses.SearchResponseService;
 
 import java.util.*;
 import java.util.regex.Matcher;

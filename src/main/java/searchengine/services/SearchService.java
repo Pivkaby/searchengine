@@ -1,7 +1,7 @@
 package searchengine.services;
 
 import searchengine.model.Request;
-import searchengine.services.responses.ResponseService;
+import searchengine.responses.ResponseService;
 
 import java.io.IOException;
 

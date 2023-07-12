@@ -1,6 +1,6 @@
 package searchengine.services;
 import searchengine.model.*;
-import searchengine.services.responses.ResponseService;
+import searchengine.responses.ResponseService;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,4 +1,4 @@
-package searchengine.services.responses;
+package searchengine.responses;
 
 public interface ResponseService {
 

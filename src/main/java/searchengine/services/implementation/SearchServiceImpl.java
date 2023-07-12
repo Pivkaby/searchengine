@@ -6,15 +6,14 @@ import org.springframework.stereotype.Service;
 import searchengine.search.Search;
 import searchengine.model.Request;
 import searchengine.services.SearchService;
-import searchengine.services.responses.FalseResponseService;
-import searchengine.services.responses.ResponseService;
+import searchengine.responses.FalseResponseService;
+import searchengine.responses.ResponseService;
 
 @Service
 public class SearchServiceImpl implements SearchService {
 
     private static final Log log = LogFactory.getLog(SearchServiceImpl.class);
     private final Search search;
-
 
     public SearchServiceImpl(Search search) {
         this.search = search;

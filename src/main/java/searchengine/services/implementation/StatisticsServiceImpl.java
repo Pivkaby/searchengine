@@ -10,7 +10,7 @@ import searchengine.model.Status;
 import searchengine.services.indexresponseentity.Detailed;
 import searchengine.services.indexresponseentity.Statistics;
 import searchengine.services.indexresponseentity.Total;
-import searchengine.services.responses.StatisticResponseService;
+import searchengine.responses.StatisticResponseService;
 
 import java.util.List;
 

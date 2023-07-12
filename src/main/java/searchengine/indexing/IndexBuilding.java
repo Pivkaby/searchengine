@@ -14,17 +14,17 @@ import java.util.concurrent.ThreadPoolExecutor;
 public class IndexBuilding {
 
     private final SearchSettings searchSettings;
-    private final SearchService siteRepositoryService;
+    private final IndexingService siteRepositoryService;
     private final IndexingService indexRepositoryService;
-    private final SearchService pageRepositoryService;
+    private final IndexingService pageRepositoryService;
     private final IndexingService lemmaRepositoryService;
     private final IndexingService lemmaAllRepositoryService;
     private final List<SiteIndexing> siteIndexingList = Collections.synchronizedList(new ArrayList<>());
 
     public IndexBuilding(SearchSettings searchSettings,
-                         SearchService siteRepositoryService,
+                         IndexingService siteRepositoryService,
                          IndexingService indexRepositoryService,
-                         SearchService pageRepositoryService,
+                         IndexingService pageRepositoryService,
                          IndexingService lemmaRepositoryService,
                          IndexingService lemmaAllRepositoryService) {
         this.searchSettings = searchSettings;

@@ -1,11 +1,9 @@
 package searchengine.services;
-import searchengine.model.Index;
-import searchengine.model.Lemma;
-import searchengine.model.LemmaAll;
-import searchengine.model.Page;
+import searchengine.model.*;
 import searchengine.services.responses.ResponseService;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface IndexingService {
     ResponseService startIndexingAll();
@@ -27,4 +25,22 @@ public interface IndexingService {
     List<Lemma> findLemmasByIndexing(List<Index> indexingList);
     void saveLemma(String lemma, int frequency, int siteId);
     int findLemmaIdByNameAndSiteId(String lemma, int siteId);
+    void save(Page page);
+
+    Optional<Page> findPageByPageIdAndSite(int pageId, Site site);
+
+    long pageCount();
+
+    long pageCount(long siteId);
+
+    Optional<Page> findPageByPagePathAndSiteId(String pagePath, int siteId);
+
+    List<Page> getAllPagesBySiteId(int siteId);
+
+    void deletePagesBySiteId(int siteId);
+    Optional<Site> getSite (String url);
+    Site getSite (int siteId);
+    void save(Site site);
+    long siteCount();
+    List<Site> getAllSites();
 }

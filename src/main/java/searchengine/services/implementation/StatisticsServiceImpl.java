@@ -19,9 +19,9 @@ import java.util.List;
 public class StatisticsServiceImpl implements StatisticsService {
     private static final Log log = LogFactory.getLog(StatisticsServiceImpl.class);
 
-    private final SearchService siteRepositoryService;
+    private final IndexingService siteRepositoryService;
     private final IndexingService lemmaRepositoryService;
-    private final SearchService pageRepositoryService;
+    private final IndexingService pageRepositoryService;
 
     public StatisticResponseService getStatistics() {
         Total total = getTotal();

@@ -1,12 +1,8 @@
 package searchengine.services.implementation;
 
-import searchengine.model.Index;
-import searchengine.model.Lemma;
-import searchengine.model.LemmaAll;
-import searchengine.model.Page;
-import searchengine.repo.IndexRepository;
-import searchengine.repo.LemmaAllRepository;
-import searchengine.repo.LemmaRepository;
+import searchengine.model.*;
+import searchengine.repo.*;
+import searchengine.search.Search;
 import searchengine.services.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -16,7 +12,9 @@ import searchengine.services.responses.FalseResponseService;
 import searchengine.services.responses.ResponseService;
 import searchengine.services.responses.TrueResponseService;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class IndexingServiceImpl implements IndexingService {
@@ -25,12 +23,16 @@ public class IndexingServiceImpl implements IndexingService {
     private final IndexRepository indexRepository;
     private final LemmaAllRepository lemmaAllRepository;
     private final LemmaRepository lemmaRepository;
+    private final PageRepository pageRepository;
+    private final SiteRepository siteRepository;
     private static final Logger log = LogManager.getLogger();
-    public IndexingServiceImpl(IndexBuilding indexBuilding, IndexRepository indexRepository, LemmaAllRepository lemmaAllRepository, LemmaRepository lemmaRepository) {
+    public IndexingServiceImpl(IndexBuilding indexBuilding, IndexRepository indexRepository, LemmaAllRepository lemmaAllRepository, LemmaRepository lemmaRepository, PageRepository pageRepository, SiteRepository siteRepository) {
         this.indexBuilding = indexBuilding;
         this.indexRepository = indexRepository;
         this.lemmaAllRepository = lemmaAllRepository;
         this.lemmaRepository = lemmaRepository;
+        this.pageRepository = pageRepository;
+        this.siteRepository = siteRepository;
     }
 
     @Override
@@ -190,5 +192,69 @@ public class IndexingServiceImpl implements IndexingService {
     @Override
     public int findLemmaIdByNameAndSiteId(String lemma, int siteId) {
         return lemmaRepository.findLemmaIdByNameAndSiteId(lemma, siteId);
+    }
+
+    @Override
+    public synchronized void save(Page page) {
+        pageRepository.save(page);
+    }
+
+    @Override
+    public Optional<Page> findPageByPageIdAndSite(int pageId, Site site) {
+        return pageRepository.findByIdAndSite(pageId, site);
+    }
+
+    @Override
+    public long pageCount() {
+        return pageRepository.count();
+    }
+
+    @Override
+    public long pageCount(long siteId) {
+        return pageRepository.count(siteId);
+    }
+
+    @Override
+    public Optional<Page> findPageByPagePathAndSiteId(String pagePath, int siteId) {
+        return pageRepository.findByPathAndSiteId(pagePath, siteId);
+    }
+    @Override
+    public List<Page> getAllPagesBySiteId(int siteId) {
+        return pageRepository.getAllPagesBySiteId(siteId);
+    }
+    @Override
+    public synchronized void deletePagesBySiteId(int siteId) {
+        pageRepository.deleteAll(getAllPagesBySiteId(siteId));
+    }
+
+    @Override
+    public Optional<Site> getSite(String url) {
+        return siteRepository.findByUrl(url);
+    }
+    public Site getSite(int siteId) {
+        Optional<Site> optional = siteRepository.findById(siteId);
+        Site site = null;
+        if(optional.isPresent()){
+            site = optional.get();
+        }
+        return site;
+    }
+
+    @Override
+    public synchronized void save(Site site) {
+        siteRepository.save(site);
+    }
+
+    @Override
+    public long siteCount(){
+        return siteRepository.count();
+    }
+
+    @Override
+    public List<Site> getAllSites() {
+        List<Site> siteList = new ArrayList<>();
+        Iterable<Site> it = siteRepository.findAll();
+        it.forEach(siteList::add);
+        return siteList;
     }
 }

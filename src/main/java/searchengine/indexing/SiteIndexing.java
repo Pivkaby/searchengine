@@ -16,9 +16,9 @@ import java.util.*;
 public class SiteIndexing extends Thread {
     private static final Logger log = LogManager.getLogger();
     private final Site site;
-    private final SearchService siteRepositoryService;
+    private final IndexingService siteRepositoryService;
     private final IndexingService indexingService;
-    private final SearchService pageRepositoryService;
+    private final IndexingService pageRepositoryService;
     private final IndexingService lemmaRepositoryService;
     private final IndexingService lemmaAllRepositoryService;
     private final boolean allSite;
@@ -28,9 +28,9 @@ public class SiteIndexing extends Thread {
 
     public SiteIndexing(Site site,
                         SearchSettings searchSettings,
-                        SearchService siteRepositoryService,
+                        IndexingService siteRepositoryService,
                         IndexingService indexingService,
-                        SearchService pageRepositoryService,
+                        IndexingService pageRepositoryService,
                         IndexingService lemmaRepositoryService,
                         IndexingService lemmaAllRepositoryService,
                         boolean allSite,

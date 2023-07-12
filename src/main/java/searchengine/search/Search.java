@@ -18,14 +18,14 @@ import java.util.stream.Stream;
 @Service
 public class Search {
 
-    private final SearchService siteRepositoryService;
+    private final IndexingService siteRepositoryService;
     private final IndexingService indexingService;
-    private final SearchService pageRepositoryService;
+    private final IndexingService pageRepositoryService;
     private final IndexingService lemmaRepositoryService;
 
-    public Search(SearchService siteRepositoryService,
+    public Search(IndexingService siteRepositoryService,
                   IndexingService indexingService,
-                  SearchService pageRepositoryService,
+                  IndexingService pageRepositoryService,
                   IndexingService lemmaRepositoryService) {
         this.siteRepositoryService = siteRepositoryService;
         this.indexingService = indexingService;

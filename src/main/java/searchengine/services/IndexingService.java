@@ -26,17 +26,11 @@ public interface IndexingService {
     void saveLemma(String lemma, int frequency, int siteId);
     int findLemmaIdByNameAndSiteId(String lemma, int siteId);
     void save(Page page);
-
     Optional<Page> findPageByPageIdAndSite(int pageId, Site site);
-
     long pageCount();
-
     long pageCount(long siteId);
-
     Optional<Page> findPageByPagePathAndSiteId(String pagePath, int siteId);
-
     List<Page> getAllPagesBySiteId(int siteId);
-
     void deletePagesBySiteId(int siteId);
     Optional<Site> getSite (String url);
     Site getSite (int siteId);

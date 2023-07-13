@@ -1,4 +1,4 @@
-package searchengine.services.indexresponseentity;
+package searchengine.indexresponseentity;
 
 import searchengine.model.Status;
 

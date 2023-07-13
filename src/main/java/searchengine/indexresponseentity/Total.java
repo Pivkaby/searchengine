@@ -1,4 +1,4 @@
-package searchengine.services.indexresponseentity;
+package searchengine.indexresponseentity;
 
 public class Total {
     long sites;
